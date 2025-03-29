@@ -1,6 +1,6 @@
 import os
 import mysql.connector
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 from datetime import datetime
 
 def conectar_mysql():
@@ -11,7 +11,7 @@ def conectar_mysql():
         host=parsed.hostname,
         port=parsed.port or 3306,
         user=parsed.username,
-        password=parsed.password,
+        password = unquote(parsed.password) if parsed.password else None,
         database=parsed.path.lstrip('/')
     )
 
