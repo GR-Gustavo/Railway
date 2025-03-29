@@ -1,11 +1,12 @@
-from datetime import datetime
-import mysql.connector
 import os
+import mysql.connector
 from urllib.parse import urlparse
+from datetime import datetime
 
 def conectar_mysql():
-    db_url = os.getenv("DATABASE_URL")
+    db_url = os.getenv("MYSQL_URL")  # 👈 usando a variável correta do Railway
     parsed = urlparse(db_url)
+
     return mysql.connector.connect(
         host=parsed.hostname,
         port=parsed.port or 3306,
