@@ -1,1 +1,7 @@
+<<<<<<< HEAD:Requirements.txt
 mysql-connector-python
+=======
+openai
+requests
+pandas
+>>>>>>> d887a3a23c2137759fa6687eeb3da83b56b43fab:requirements.txt
